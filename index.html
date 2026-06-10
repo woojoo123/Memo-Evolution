@@ -18,13 +18,15 @@
         <label for="memo-content">내용</label>
         <textarea id="memo-content" placeholder="내용을 입력하세요"></textarea>
 
-        <button type="button">메모 추가</button>
+        <button id="add-memo-button" type="button">메모 추가</button>
     </div>
 
     <div class="memo-list">
         <h2>메모 목록</h2>
-        <p class="empty-message">아직 작성된 메모가 없습니다.</p>
+        <p id="empty-message" class="empty-message">아직 작성된 메모가 없습니다.</p>
+        <div id="memo-container"></div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
