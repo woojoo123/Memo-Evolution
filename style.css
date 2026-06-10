@@ -30,3 +30,11 @@ button {
 .empty-message {
     color: #777;
 }
+
+.memo-form input,
+.memo-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
