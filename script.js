@@ -7,7 +7,7 @@ const emptyMessage = document.getElementById("empty-message");
 let memos = [];
 
 function updateEmptyMessage() {
-    if (memoContainer.children.length === 0) {
+    if (memos.length === 0) {
         emptyMessage.style.display = 'block';
     } else {
         emptyMessage.style.display = 'none';
