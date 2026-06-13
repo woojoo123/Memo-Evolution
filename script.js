@@ -25,6 +25,46 @@ function updateEmptyMessage() {
     }
 }
 
+function deleteMemo (id) {
+    memos = memos.filter(function (item) {
+        return item.id !== id;
+    });
+    saveMemos();
+    renderMemos();
+}
+
+function editMemo (id) {
+    const targetMemo = memos.find(function (item) {
+        return item.id === id;
+    })
+    const newTitle = prompt("새 제목을 입력하세요", targetMemo.title);
+    const newContent = prompt("새 내용을 입력하세요", targetMemo.content);
+
+    if (newTitle === null || newContent === null) {
+        return;
+    }
+
+    if (newTitle === '' || newContent === '') {
+        alert("제목과 내용을 모두 입력하세요.");
+        return;
+    }
+
+    memos = memos.map(function (item) {
+        if (item.id === id) {
+            return {
+                id: item.id,
+                title: newTitle,
+                content: newContent
+            };
+        }
+
+        return item;
+    });
+
+    saveMemos();
+    renderMemos();
+}
+
 function renderMemos() {
     memoContainer.innerHTML = '';
 
@@ -43,40 +83,11 @@ function renderMemos() {
         const deleteButton = memoCard.querySelector('.delete-button');
 
         editButton.addEventListener('click', function () {
-            const newTitle = prompt("새 제목을 입력하세요", memo.title);
-            const newContent = prompt("새 내용을 입력하세요", memo.content);
-
-            if (newTitle === null || newContent === null) {
-                return;
-            }
-
-            if (newTitle=== '' || newContent === '') {
-                alert("제목과 내용을 모두 입력하세요.");
-                return;
-            }
-
-            memos = memos.map(function (item) {
-                if (item.id === memo.id) {
-                    return {
-                        id: item.id,
-                        title: newTitle,
-                        content: newContent
-                    };
-                }
-
-                return item;
-            });
-
-            saveMemos();
-            renderMemos();
+            editMemo(memo.id);
         });
 
         deleteButton.addEventListener('click', function () {
-            memos = memos.filter(function (item) {
-                return item.id !== memo.id;
-            });
-            saveMemos();
-            renderMemos();
+            deleteMemo(memo.id);
         });
 
         memoContainer.appendChild(memoCard);
