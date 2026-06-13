@@ -35,10 +35,41 @@ function renderMemos() {
         memoCard.innerHTML = `
             <h3>${memo.title}</h3>
             <p>${memo.content}</p>
-            <button type="button">삭제</button>
+            <button class="edit-button" type="button">수정</button>
+            <button class="delete-button" type="button">삭제</button>
         `;
 
-        const deleteButton = memoCard.querySelector('button');
+        const editButton = memoCard.querySelector('.edit-button');
+        const deleteButton = memoCard.querySelector('.delete-button');
+
+        editButton.addEventListener('click', function () {
+            const newTitle = prompt("새 제목을 입력하세요", memo.title);
+            const newContent = prompt("새 내용을 입력하세요", memo.content);
+
+            if (newTitle === null || newContent === null) {
+                return;
+            }
+
+            if (newTitle=== '' || newContent === '') {
+                alert("제목과 내용을 모두 입력하세요.");
+                return;
+            }
+
+            memos = memos.map(function (item) {
+                if (item.id === memo.id) {
+                    return {
+                        id: item.id,
+                        title: newTitle,
+                        content: newContent
+                    };
+                }
+
+                return item;
+            });
+
+            saveMemos();
+            renderMemos();
+        });
 
         deleteButton.addEventListener('click', function () {
             memos = memos.filter(function (item) {
