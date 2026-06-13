@@ -6,6 +6,17 @@ const emptyMessage = document.getElementById("empty-message");
 
 let memos = [];
 
+function saveMemos() {
+    localStorage.setItem('memos', JSON.stringify(memos));
+}
+
+function loadMemos() {
+    const savedMemos = localStorage.getItem('memos');
+    if (savedMemos !== null) {
+        memos = JSON.parse(savedMemos);
+    }
+}
+
 function updateEmptyMessage() {
     if (memos.length === 0) {
         emptyMessage.style.display = 'block';
@@ -33,7 +44,7 @@ function renderMemos() {
             memos = memos.filter(function (item) {
                 return item.id !== memo.id;
             });
-
+            saveMemos();
             renderMemos();
         });
 
@@ -60,9 +71,12 @@ addMemoButton.addEventListener('click', function () {
     };
 
     memos.push(newMemo);
-
+    saveMemos();
     renderMemos();
 
     titleInput.value = '';
     contentInput.value = '';
 });
+
+loadMemos();
+renderMemos();
