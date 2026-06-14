@@ -25,7 +25,13 @@ function updateEmptyMessage() {
     }
 }
 
-function deleteMemo (id) {
+function deleteMemo(id) {
+    const isConfirmed = confirm("정말 삭제하시겠습니까?");
+
+    if (!isConfirmed) {
+        return;
+    }
+
     memos = memos.filter(function (item) {
         return item.id !== id;
     });
@@ -33,18 +39,18 @@ function deleteMemo (id) {
     renderMemos();
 }
 
-function editMemo (id) {
+function editMemo(id) {
     const targetMemo = memos.find(function (item) {
         return item.id === id;
-    })
-    const newTitle = prompt("새 제목을 입력하세요", targetMemo.title);
-    const newContent = prompt("새 내용을 입력하세요", targetMemo.content);
+    });
+    const newTitle = prompt("새 제목을 입력하세요", targetMemo.title.trim());
+    const newContent = prompt("새 내용을 입력하세요", targetMemo.content.trim());
 
-    if (newTitle === null || newContent === null) {
+    if (newTitle === null  || newContent === null) {
         return;
     }
 
-    if (newTitle === '' || newContent === '') {
+    if (newTitle.trim() === '' || newContent.trim() === '') {
         alert("제목과 내용을 모두 입력하세요.");
         return;
     }
@@ -53,14 +59,33 @@ function editMemo (id) {
         if (item.id === id) {
             return {
                 id: item.id,
-                title: newTitle,
-                content: newContent
+                title: newTitle.trim(),
+                content: newContent.trim()
             };
         }
 
         return item;
     });
 
+    saveMemos();
+    renderMemos();
+}
+
+function addMemo(title, content) {
+
+    // 빈 값인지 검사
+    if (title === '' || content === '') {
+        alert('제목과 내용을 모두 입력하세요.');
+        return;
+    }
+
+    const newMemo = {
+        id: Date.now(),
+        title: title,
+        content: content
+    };
+
+    memos.push(newMemo);
     saveMemos();
     renderMemos();
 }
@@ -97,24 +122,10 @@ function renderMemos() {
 }
 
 addMemoButton.addEventListener('click', function () {
-    const title = titleInput.value;
-    const content = contentInput.value;
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
 
-    // 빈 값인지 검사
-    if (title === '' || content === '') {
-        alert('제목과 내용을 모두 입력하세요.');
-        return;
-    }
-
-    const newMemo = {
-        id: Date.now(),
-        title: title,
-        content: content
-    };
-
-    memos.push(newMemo);
-    saveMemos();
-    renderMemos();
+    addMemo(title, content);
 
     titleInput.value = '';
     contentInput.value = '';
