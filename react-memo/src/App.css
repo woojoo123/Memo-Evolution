@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app {
+  width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: white;
+}
+
+.memo-form {
+  margin-bottom: 32px;
+}
+
+.memo-form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.empty-message {
+  color: #777;
+}
+
+.memo-form input,
+.memo-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.memo-card p {
+  white-space: pre-wrap;
+}
