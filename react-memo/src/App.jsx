@@ -8,8 +8,13 @@ function App() {
     const [memos, setMemos] = useState([])
 
     function handleAddMemo() {
-        console.log(title)
-        console.log(content)
+        const trimmedTitle = title.trim()
+        const trimmedContent = content.trim()
+
+        if (trimmedTitle === '' || trimmedContent === '') {
+            alert('제목과 내용을 모두 입력하세요.')
+            return
+        }
 
         const newMemo = {
             id: Date.now(),
@@ -17,7 +22,23 @@ function App() {
             content: content,
         }
 
-        setMemos([...memos, newMemo]);
+        setMemos([...memos, newMemo])
+        setTitle('')
+        setContent('')
+    }
+
+    function handleDeleteMemo(id) {
+        const isConfirmed = confirm('정말 삭제하시겠습니까?')
+
+        if (!isConfirmed) {
+            return
+        }
+
+        const nextMemos = memos.filter((memo) => {
+            return memo.id !== id
+        })
+
+        setMemos(nextMemos)
     }
 
   return (
@@ -55,6 +76,9 @@ function App() {
                   <div className="memo-card" key={memo.id}>
                       <h3>{memo.title}</h3>
                       <p>{memo.content}</p>
+                      <button type="button" onClick={() => handleDeleteMemo(memo.id)}>
+                          삭제
+                      </button>
                   </div>
               ))}
           </div>
