@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './App.css'
 
@@ -6,6 +6,18 @@ function App() {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [memos, setMemos] = useState([])
+
+    useEffect(() => {
+        const savedMemos = localStorage.getItem('memos')
+
+        if (savedMemos !== null) {
+            setMemos(JSON.parse(savedMemos))
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('memos', JSON.stringify(memos))
+    }, [memos])
 
     function handleAddMemo() {
         const trimmedTitle = title.trim()
