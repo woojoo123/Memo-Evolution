@@ -41,6 +41,38 @@ function App() {
         setMemos(nextMemos)
     }
 
+    function handleEditMemo(id) {
+        const targetMemo = memos.find((memo) => {
+            return memo.id === id
+        })
+
+        const newTitle = prompt('새 제목을 입력하세요', targetMemo.title)
+        const newContent = prompt('새 내용을 입력하세요', targetMemo.content)
+
+        if (newTitle === null || newContent === null) {
+            return
+        }
+
+        if (newTitle.trim() === '' || newContent.trim() === '') {
+            alert('제목과 내용을 모두 입력하세요.')
+            return
+        }
+
+        const nextMemos = memos.map((memo) => {
+            if (memo.id === id) {
+                return {
+                    id: memo.id,
+                    title: newTitle.trim(),
+                    content: newContent.trim(),
+                }
+            }
+
+            return memo
+        })
+
+        setMemos(nextMemos)
+    }
+
   return (
       <div className="app">
         <div className="memo-form">
@@ -76,6 +108,9 @@ function App() {
                   <div className="memo-card" key={memo.id}>
                       <h3>{memo.title}</h3>
                       <p>{memo.content}</p>
+                      <button type="button" onClick={() => handleEditMemo(memo.id)}>
+                          수정
+                      </button>
                       <button type="button" onClick={() => handleDeleteMemo(memo.id)}>
                           삭제
                       </button>
