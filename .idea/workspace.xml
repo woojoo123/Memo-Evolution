@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10b0e877-81d9-4855-8aef-bf60afb8c3bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java-console-memo/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-memo/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-memo/src/components/MemoItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/components/MemoItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-memo/src/components/MemoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/components/MemoList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-console-memo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-console-memo/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <workItem from="1781007880921" duration="23199000" />
       <workItem from="1781093586823" duration="16000" />
       <workItem from="1781094794941" duration="2343000" />
-      <workItem from="1781171715194" duration="125268000" />
+      <workItem from="1781171715194" duration="128472000" />
     </task>
     <servers />
   </component>
