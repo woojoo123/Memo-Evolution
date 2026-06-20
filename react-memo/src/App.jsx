@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import MemoForm from './components/MemoForm'
+import MemoList from './components/MemoList'
+import './App.css'
 
 import './App.css'
 
@@ -87,48 +90,19 @@ function App() {
 
   return (
       <div className="app">
-        <div className="memo-form">
-          <h2>새 메모 작성</h2>
-
-          <label htmlFor="memo-title">제목</label>
-          <input
-              id="memo-title"
-              type="text"
-              placeholder="제목을 입력하세요"
-              value={title}
-              onChange={(event) => setTitle(event.target.value)}
+          <MemoForm
+              title={title}
+              content={content}
+              onTitleChange={(event) => setTitle(event.target.value)}
+              onContentChange={(event) => setTitle(event.target.value)}
+              ondAddMemo={handleAddMemo}
           />
 
-          <label htmlFor="memo-content">내용</label>
-          <textarea
-              id="memo-content"
-              placeholder="내용을 입력하세요"
-              value={content}
-              onChange={(event) => setContent(event.target.value)}
-          ></textarea>
-
-          <button type="button" onClick={handleAddMemo}>메모 추가</button>
-        </div>
-          <div className="memo-list">
-              <h2>메모 목록</h2>
-
-              {memos.length === 0 && (
-                  <p className="empty-message">아직 작성된 메모가 없습니다.</p>
-              )}
-
-              {memos.map((memo) => (
-                  <div className="memo-card" key={memo.id}>
-                      <h3>{memo.title}</h3>
-                      <p>{memo.content}</p>
-                      <button type="button" onClick={() => handleEditMemo(memo.id)}>
-                          수정
-                      </button>
-                      <button type="button" onClick={() => handleDeleteMemo(memo.id)}>
-                          삭제
-                      </button>
-                  </div>
-              ))}
-          </div>
+          <MemoList
+              memos={memos}
+              onEditMemo={handleEditMemo}
+              onDeleteMemo={handleDeleteMemo}
+          />
       </div>
   )
 }
