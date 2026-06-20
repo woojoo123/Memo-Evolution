@@ -33,8 +33,8 @@ function App() {
 
         const newMemo = {
             id: Date.now(),
-            title: title,
-            content: content,
+            title: trimmedTitle,
+            content: trimmedContent,
         }
 
         setMemos([...memos, newMemo])
@@ -94,8 +94,8 @@ function App() {
               title={title}
               content={content}
               onTitleChange={(event) => setTitle(event.target.value)}
-              onContentChange={(event) => setTitle(event.target.value)}
-              ondAddMemo={handleAddMemo}
+              onContentChange={(event) => setContent(event.target.value)}
+              onAddMemo={handleAddMemo}
           />
 
           <MemoList

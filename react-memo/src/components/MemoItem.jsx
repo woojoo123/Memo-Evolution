@@ -1,5 +1,3 @@
-import MemoItem from './MemoItem'
-
 function MemoItem({ memo, onEditMemo, onDeleteMemo }) {
     return (
         <div className="memo-card">

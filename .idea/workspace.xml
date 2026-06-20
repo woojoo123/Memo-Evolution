@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10b0e877-81d9-4855-8aef-bf60afb8c3bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/react-memo/src/components/MemoForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-memo/src/components/MemoItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-memo/src/components/MemoList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-console-memo/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-memo/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-memo/src/components/MemoItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/components/MemoItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-memo/src/components/MemoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-memo/src/components/MemoList.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -49,6 +50,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/woojoo/workspace/Memo Evolution/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -57,8 +61,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/react-memo/src/components" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/java-console-memo/src" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="java-console-memo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Memo Evolution" />
       <method v="2">
@@ -70,6 +84,11 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -89,7 +108,7 @@
       <workItem from="1781007880921" duration="23199000" />
       <workItem from="1781093586823" duration="16000" />
       <workItem from="1781094794941" duration="2343000" />
-      <workItem from="1781171715194" duration="110112000" />
+      <workItem from="1781171715194" duration="125268000" />
     </task>
     <servers />
   </component>

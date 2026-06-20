@@ -1,3 +1,5 @@
+import MemoItem from './MemoItem'
+
 function MemoList({ memos, onEditMemo, onDeleteMemo }) {
     return (
         <div className="memo-list">
