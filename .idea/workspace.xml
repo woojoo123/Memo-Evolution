@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10b0e877-81d9-4855-8aef-bf60afb8c3bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java-console-memo/src/Memo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-console-memo/src/MemoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-console-memo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-console-memo/src/Main.java" afterDir="false" />
     </list>
@@ -113,7 +113,7 @@
       <workItem from="1781007880921" duration="23199000" />
       <workItem from="1781093586823" duration="16000" />
       <workItem from="1781094794941" duration="2343000" />
-      <workItem from="1781171715194" duration="132513000" />
+      <workItem from="1781171715194" duration="136258000" />
     </task>
     <servers />
   </component>
