@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<String[]> memos = new ArrayList<>();
+        List<Memo> memos = new ArrayList<>();
         boolean running = true;
 
         while (running) {
@@ -40,30 +40,30 @@ public class Main {
         System.out.println("메뉴 선택: ");
     }
 
-    static void addMemo(Scanner scanner, List<String[]> memos) {
+    static void addMemo(Scanner scanner, List<Memo> memos) {
         System.out.println("제목을 입력해 주세요");
         String title = scanner.nextLine();
         System.out.println("내용을 입력해 주세요");
         String content = scanner.nextLine();
-        String[] memo = {title, content};
+        Memo memo = new Memo(title, content);
         memos.add(memo);
         System.out.println("저장 완료되었습니다.");
     }
 
-    static void printMemos(List<String[]> memos) {
+    static void printMemos(List<Memo> memos) {
         if (memos.isEmpty()) {
             System.out.println("작성된 메모가 없습니다.");
         } else {
             for (int i = 0; i < memos.size(); i++) {
-                String[] memo = memos.get(i);
+                Memo memo = memos.get(i);
 
-                System.out.println((i + 1) + ". " + memo[0]);
-                System.out.println(memo[1]);
+                System.out.println((i + 1) + ". " + memo.getTitle());
+                System.out.println(memo.getContent());
             }
         }
     }
 
-    static void editMemo(Scanner scanner, List<String[]> memos) {
+    static void editMemo(Scanner scanner, List<Memo> memos) {
         if (memos.isEmpty()) {
             System.out.println("수정할 메모가 없습니다.");
         } else {
@@ -80,7 +80,7 @@ public class Main {
                 System.out.println("새 내용: ");
                 String newContent = scanner.nextLine();
 
-                String[] updateMemo = {newTitle, newContent};
+                Memo updateMemo = new Memo(newTitle, newContent);
                 memos.set(index, updateMemo);
 
                 System.out.println("메모가 수정되었습니다.");
@@ -88,7 +88,7 @@ public class Main {
         }
     }
 
-    static void deleteMemo(Scanner scanner, List<String[]> memos) {
+    static void deleteMemo(Scanner scanner, List<Memo> memos) {
         if (memos.isEmpty()) {
             System.out.println("삭제할 메모가 없습니다.");
         } else {
