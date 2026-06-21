@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/java-console-memo/java-console-memo.iml" filepath="$PROJECT_DIR$/java-console-memo/java-console-memo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet-jsp-memo.iml" filepath="$PROJECT_DIR$/servlet-jsp-memo.iml" />
     </modules>
   </component>
 </project>

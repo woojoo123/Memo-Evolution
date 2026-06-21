@@ -93,7 +93,7 @@ public class Main {
             int index = memoNumber - 1;
 
             if (index < 0 || index >= memoService.size()) {
-                System.out.println("올바른 메모 번호를 입력하세요");
+                System.out.println("올바른 메모ㅑㅅ 번호를 입력하세요");
             } else {
                 memoService.deleteMemo(index);
                 System.out.println("메모가 삭제되었습니다.");
